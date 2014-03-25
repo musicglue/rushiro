@@ -1,4 +1,5 @@
-%w[permission permissions access_levels access_control_hash deny_based_control allow_based_control].each do |file|
-  require "rushiro/#{file}"
-end
-
+require_relative 'rushiro/modes/allow_by_default'
+require_relative 'rushiro/modes/deny_by_default'
+require_relative 'rushiro/rule'
+require_relative 'rushiro/rules'
+require_relative 'rushiro/acl'

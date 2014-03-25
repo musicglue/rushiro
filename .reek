@@ -1,0 +1,5 @@
+---
+IrresponsibleModule:
+  enabled: false
+TooManyStatements:
+  max_statements: 6

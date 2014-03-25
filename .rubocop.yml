@@ -1,0 +1,22 @@
+AllCops:
+  Excludes:
+    - coverage/**
+    - vendor/**
+
+AmbiguousOperator:
+  Enabled: false
+
+AndOr:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+DoubleNegation:
+  Enabled: false
+
+LineLength:
+  Max: 120
+
+MethodDefParentheses:
+  Enabled: false
