@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'rushiro'
-  s.version     = '1.0.0'
-  s.date        = '2011-11-03'
+  s.version     = '2.0.0'
+  s.date        = '2014-03-26'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Lee Henson', 'Guy Boertje']
   s.email       = ['lee.m.henson@gmail.com', 'guyboertje@gmail.com']
@@ -12,18 +12,21 @@ Gem::Specification.new do |s|
   # = MANIFEST =
   s.files = %w[
     Gemfile
+    Guardfile
     Rakefile
     lib/rushiro.rb
-    lib/rushiro/access_control_hash.rb
-    lib/rushiro/access_levels.rb
-    lib/rushiro/allow_based_control.rb
-    lib/rushiro/deny_based_control.rb
-    lib/rushiro/permission.rb
-    lib/rushiro/permissions.rb
+    lib/rushiro/acl.rb
+    lib/rushiro/modes/allow_by_default.rb
+    lib/rushiro/modes/deny_by_default.rb
+    lib/rushiro/rule.rb
+    lib/rushiro/rules.rb
     lib/rushiro/version.rb
     readme.md
     rushiro.gemspec
-    spec/access_control_spec.rb
+    spec/acl_spec.rb
+    spec/allowed_by_default_rules_spec.rb
+    spec/denied_by_default_rules_spec.rb
+    spec/rule_spec.rb
     spec/spec_helper.rb
   ]
   # = MANIFEST =
