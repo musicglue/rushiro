@@ -7,6 +7,10 @@ module Rushiro
         MATCHER.match serialized_rule
       end
 
+      def modify_outcome outcome, level
+        outcome.permit level
+      end
+
       def rules_permit_method
         :any?
       end
@@ -15,8 +19,8 @@ module Rushiro
         "allows|#{serialized_rule}"
       end
 
-      def acl_permit_method
-        :any?
+      def to_s
+        'deny_by_default'
       end
     end
   end

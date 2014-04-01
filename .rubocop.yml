@@ -20,3 +20,7 @@ LineLength:
 
 MethodDefParentheses:
   Enabled: false
+
+TrivialAccessors:
+  AllowPredicates: true
+

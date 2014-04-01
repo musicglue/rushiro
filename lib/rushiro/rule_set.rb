@@ -1,5 +1,5 @@
 module Rushiro
-  class Rules
+  class RuleSet
     def initialize(level: 'default', mode:)
       @level = level
       @rules = SortedSet.new
@@ -14,8 +14,13 @@ module Rushiro
       with_applicable_rule(serialized_rule) { |rule| @rules.delete rule }
     end
 
-    def permit? request
-      @rules.send(@mode.rules_permit_method) { |rule| rule.matches? request }
+    def process outcome
+      return unless match? outcome.request
+      @mode.modify_outcome outcome, @level
+    end
+
+    def match? request
+      @rules.any? { |rule| rule.matches? request }
     end
 
     def to_ary
