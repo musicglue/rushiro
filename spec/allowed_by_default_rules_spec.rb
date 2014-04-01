@@ -82,4 +82,14 @@ describe 'a set of rules in allow-by-default mode' do
       @rules.permit?('bb|yyyyy|ee|zzzz|12|56').must_equal true
     end
   end
+
+  describe 'partially-matched permissions' do
+    before do
+      @rules.add_rule 'denies|individual'
+    end
+
+    it 'does not deny more complex permissions that match that simple rule' do
+      @rules.permit?('a').must_equal true
+    end
+  end
 end

@@ -55,4 +55,14 @@ describe 'a set of rules in deny-by-default mode' do
       @rules.permit?('company|edit|acme-123').must_equal false
     end
   end
+
+  describe 'partially-matched permissions' do
+    before do
+      @rules.add_rule 'allows|individual'
+    end
+
+    it 'does not allow more complex permissions that match that simple rule' do
+      @rules.permit?('a').must_equal false
+    end
+  end
 end
