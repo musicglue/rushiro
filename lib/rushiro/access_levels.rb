@@ -1,6 +1,7 @@
 module Rushiro
   class AccessLevels
-    attr_reader :individual, :organization, :musicglue
+    attr_reader :individual, :organization, :system
+
     def initialize(hash)
       @individual = Permissions.new(hash[:individual] || [])
       @organization = Permissions.new(hash[:organization] || [])
